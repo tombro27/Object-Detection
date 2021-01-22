@@ -16,6 +16,6 @@ The mobilenet-ssd model is a Single-Shot multibox Detection (SSD) network intend
 ![Input Car Image](https://github.com/tombro27/Object-Detection/blob/main/car.jpg) 
 
 ### Output 2
-![Output Image](https://github.com/tombro27/Object-Detection/blob/main/img2.jpg)
+![Output Image](https://github.com/tombro27/Object-Detection/blob/main/img2.jpeg)
 
 __*For image as input use main_image.py script and for input as video use main_video.py script.*__
