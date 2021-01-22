@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('dog.jpg')
+img = cv2.imread('car.jpg')
 
 classes = []
 with open('coco.names','rt') as f:
@@ -18,9 +18,9 @@ net.setInputSwapRB(True)
 
 classIds, confs, bbox = net.detect(img, confThreshold=0.5)
 for classId, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
-    cv2.rectangle(img, box, color=(0,255,255), thickness=2)
-    cv2.putText(img,classes[classId-1].capitalize(),(int((box[0]+box[2])/2),box[1]+30),cv2.FONT_HERSHEY_PLAIN,2,(0,153,0),2)
-    cv2.putText(img,str(round(confidence*100,2)),(int((box[0]+box[2])/2+200),box[1]+30),cv2.FONT_HERSHEY_PLAIN,1,(0,153,0),1)
+    cv2.rectangle(img, box, color=(0,255,0), thickness=2)
+    cv2.putText(img,classes[classId-1].capitalize(),(box[0]+10,box[1]+10),cv2.FONT_HERSHEY_PLAIN,2,(0,255,255),2)
+    cv2.putText(img,str(round(confidence*100,2)),(box[0]+150,box[1]+10),cv2.FONT_HERSHEY_PLAIN,2,(0,255,255),2)
 
 cv2.imshow("Image",img)
 cv2.waitKey(0)
